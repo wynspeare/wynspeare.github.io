@@ -1,3 +1,4 @@
+
 /*
  * This is the main css file that ships with the airspace theme.
  * In airspace, it is called style.css
@@ -97,7 +98,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	Slider Start
 --*/
 #slider {
-  background: url("../img/slider-bg.jpg") no-repeat;
+  background: url("../img/slider.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 10% 0%;
@@ -113,8 +114,8 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, #8b86a3, #322e40);
-  opacity: 0.8;
+  background: linear-gradient(to left, #7a5f67, #322e40);
+  opacity: 0.7;
 }
 #slider .block {
   color: #E3E3E4;
@@ -231,7 +232,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	Feature Start
 --*/
 #feature {
-  background: url("../img/featue-bg.jpg");
+  background: url("../img/feature.jpg");
   background-position: 50% 94px;
   width: 100%;
   display: block;
@@ -252,19 +253,25 @@ font header .navbar-default .navbar-nav li a:hover {
   backface-visibility: hidden;
   padding: 100px 0;
 }
+
 #feature h2 {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
 }
 #feature p {
-  color: #8d8f92;
+  color: #5b5b5b;
   margin-bottom: 20px;
 }
 #feature .btn-view-works {
-  background: #655E7A;
-  color: #fff;
-  padding: 10px 20px;
+  border-width: 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  color: #5b5b5b;
+  text-transform: uppercase;
+  border-radius: 0px;
+  font-weight: 900;
+  padding: 20px 30px;
 }
 /*--
 	content Start
@@ -358,7 +365,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	Slider-work Start
 --*/
 #global-header {
-  background: url("../img/slider-bg.jpg") no-repeat;
+  background: url("../img/slider.jpg") no-repeat;
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 107px;
@@ -374,7 +381,7 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, #928dab, #1f1c2c 70%);
+  background: linear-gradient(to left, #bbcccb, #1f1c2c 70%);
   opacity: 0.8;
 }
 #global-header .block {
@@ -607,7 +614,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	slider-contact Start
 --*/
 #slider-contact {
-  background: url("../img/slider-bg.jpg") no-repeat;
+  background: url("../img/slider.jpg") no-repeat;
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 107px;
