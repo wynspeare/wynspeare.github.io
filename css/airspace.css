@@ -69,7 +69,7 @@ a:active {
 	Header Start
 --*/
 header {
-  background: rgb(58, 58, 58);
+  background: rgb(7, 7, 7);
   padding: 20px 0;
 }
 header .navbar {
@@ -87,12 +87,14 @@ header .navbar-default .navbar-nav {
   padding-top: 10px;
 }
 header .navbar-default .navbar-nav li a {
-  color: #333333;
+  color: white;
   padding: 10px 26px;
   font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 font header .navbar-default .navbar-nav li a:hover {
-  color: #000;
+  color: rgb(187, 187, 187);
 }
 /*---------------------------------------------
 					Index Start
@@ -778,7 +780,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	footer Start
 --*/
 footer {
-  background: #F5F5F5;
+  background: rgb(7, 7, 7);
   text-align: center;
   padding-top: 48px;
   padding-bottom: 55px;
@@ -786,10 +788,10 @@ footer {
 footer p {
   font-size: 13px;
   line-height: 25px;
-  color: #919191;
+  color: #c5c5c5;
 }
 footer a {
-  color: #595959;
+  color: #c5c5c5;
 }
 footer .footer-manu {
   padding-bottom: 25px;
@@ -804,8 +806,8 @@ footer .footer-manu ul li {
 }
 footer .footer-manu ul li a {
   display: inline-block;
-  color: #494949;
+  color: #c5c5c5;
 }
 footer .footer-manu ul li a:hover {
-  color: #000;
+  color: rgb(170, 170, 170);
 }
