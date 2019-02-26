@@ -7,8 +7,10 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+/* @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700); */
 @import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,100,300,500,700);
+
 /* var text-decoration */
 /*--
 	Common Css
@@ -23,7 +25,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+
 }
 h2 {
   font-size: 30px;
@@ -57,7 +61,7 @@ a:active {
   font-weight: 600;
 }
 .section-title p {
-  font-family: 'Volkhov', serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   color: #666;
 }
@@ -65,7 +69,7 @@ a:active {
 	Header Start
 --*/
 header {
-  background: #fff;
+  background: rgb(7, 7, 7);
   padding: 20px 0;
 }
 header .navbar {
@@ -83,12 +87,14 @@ header .navbar-default .navbar-nav {
   padding-top: 10px;
 }
 header .navbar-default .navbar-nav li a {
-  color: #333333;
+  color: white;
   padding: 10px 26px;
   font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 font header .navbar-default .navbar-nav li a:hover {
-  color: #000;
+  color: rgb(187, 187, 187);
 }
 /*---------------------------------------------
 					Index Start
@@ -120,7 +126,7 @@ font header .navbar-default .navbar-nav li a:hover {
   color: #E3E3E4;
 }
 #slider .block h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   font-size: 45px;
   line-height: 60px;
@@ -130,7 +136,7 @@ font header .navbar-default .navbar-nav li a:hover {
 #slider .block p {
   font-size: 23px;
   line-height: 40px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   letter-spacing: 3px;
 }
@@ -774,7 +780,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	footer Start
 --*/
 footer {
-  background: #F5F5F5;
+  background: rgb(7, 7, 7);
   text-align: center;
   padding-top: 48px;
   padding-bottom: 55px;
@@ -782,10 +788,10 @@ footer {
 footer p {
   font-size: 13px;
   line-height: 25px;
-  color: #919191;
+  color: #c5c5c5;
 }
 footer a {
-  color: #595959;
+  color: #c5c5c5;
 }
 footer .footer-manu {
   padding-bottom: 25px;
@@ -800,8 +806,8 @@ footer .footer-manu ul li {
 }
 footer .footer-manu ul li a {
   display: inline-block;
-  color: #494949;
+  color: #c5c5c5;
 }
 footer .footer-manu ul li a:hover {
-  color: #000;
+  color: rgb(170, 170, 170);
 }
