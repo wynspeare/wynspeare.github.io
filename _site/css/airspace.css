@@ -211,7 +211,7 @@ font header .navbar-default .navbar-nav li a:hover {
   padding: 150px 0px;
   position: relative;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 #call-to-action:before {
   content: "";
@@ -224,13 +224,15 @@ font header .navbar-default .navbar-nav li a:hover {
   height: 100%;
   background: linear-gradient(to right, #d1e537, #595b3f);
   /* background: #595b3f; */
-  opacity: 0.5;
+  opacity: 0.6;
 }
 #call-to-action h2 {
   padding-bottom: 20px;
   line-height: 33px;
   margin: 0;
   font-size: 30px;
+  font-weight: 600;
+
 }
 #call-to-action p {
   font-size: 14px;
@@ -453,7 +455,7 @@ font header .navbar-default .navbar-nav li a:hover {
   opacity: 0.7;
 }
 #global-header .block {
-  color: white;
+  color: black;
   margin: 0 auto;
   padding-left: 90px;
   /* text-align: center; */
@@ -473,7 +475,7 @@ font header .navbar-default .navbar-nav li a:hover {
   word-spacing: 3px;
 }
 /*--
-	portfolio-work Start
+portfolio-work Start
 --*/
 #portfolio-work {
   overflow: hidden;
@@ -492,7 +494,6 @@ font header .navbar-default .navbar-nav li a:hover {
 #portfolio-work .block .portfolio-menu ul li {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-
   padding: 0px 20px;
   cursor: pointer;
   font-size: 15px;
@@ -545,10 +546,10 @@ font header .navbar-default .navbar-nav li a:hover {
   transition: all 0.4s ease-in-out;
 }
 #portfolio-work .block .portfolio-contant ul li {
-  float: left;
-  width: 32.22%;
+  float: center;
+  width: 30%;
   overflow: hidden;
-  margin: 6px;
+  margin: 10px;
   position: relative;
 }
 #portfolio-work .block .portfolio-contant ul li:hover .overly {
@@ -557,22 +558,35 @@ font header .navbar-default .navbar-nav li a:hover {
 #portfolio-work .block .portfolio-contant ul li:hover .position-center {
   position: absolute;
   top: 50%;
+  left: 5%;
   -webkit-transform: translate(0%, -50%);
   -moz-transform: translate(0%, -50%);
   -ms-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
+
+/* #portfolio-work .block .portfolio-contant ul li:hover .position-left {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+} */
+
 #portfolio-work .block .portfolio-contant ul li a {
   display: block;
   color: #fff;
 }
 #portfolio-work .block .portfolio-contant ul li a h2 {
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center
 }
 #portfolio-work .block .portfolio-contant ul li a p {
-  font-size: 15px;
+  font-size: 13px;
 }
 #portfolio-work .block .portfolio-contant ul li a span {
   font-style: italic;
@@ -597,7 +611,7 @@ font header .navbar-default .navbar-nav li a:hover {
   text-align: center;
 }
 #portfolio-work .block .portfolio-contant .position-center {
-  position: absolute;
+  position: center;
   top: 50%;
   left: 5%;
   -webkit-transform: translate(0%, 50%);
@@ -607,14 +621,13 @@ font header .navbar-default .navbar-nav li a:hover {
   -webkit-transition: .5s all;
   -o-transition: .5s all;
   transition: .5s all;
-  /* text-align: center; */
-
+  text-align: center;
 }
 #portfolio-work .block .mix {
   display: none;
   border: white 6px solid;
   justify-content: center;
-  /* text-align: center; */
+  text-align: center;
 
   
 }
@@ -902,7 +915,7 @@ footer {
   padding: 100px 0;
 
 
-  border-top: rgb(0, 61, 117) solid 10px;
+  /* border-top: rgb(0, 61, 117) solid 10px; */
   text-align: center;
   padding-top: 48px;
   padding-bottom: 55px;
@@ -918,7 +931,7 @@ footer:before {
   width: 100%;
   height: 100%;
   background: linear-gradient(to left, #d1e537, #595b3f);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 footer a {
@@ -939,10 +952,41 @@ footer .footer-manu ul li {
 }
 footer .footer-manu ul li a {
   display: inline-block;
-  color: white;
+  color: black;
+  font-weight: 600;
+
 }
 footer .footer-manu ul li a:hover {
   color: #d1e537
 }
+/* 
+svg	.st0 {
+  fill:#404041;
+}
+svg	.st1 {
+  fill:#58595B;
+}
+svg .st2 {
+  fill:#323031;
+}
+svg	.st3 {
+  fill:#87898B;
+}
+svg	.st4 {
+  fill:#BBBDBF;
+}
+svg	.st5 {
+  fill:#6D6E70;
+}
+svg	.st6 {
+  fill:#929497;
+}
+svg	.st7 {
+  fill:#3B3A3C;
+}
 
 
+svg.hover polygon .st0 {
+  fill: green;
+}
+ */
