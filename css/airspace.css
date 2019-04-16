@@ -495,7 +495,7 @@ portfolio-work Start
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
 
-  /* padding: 0px 20px; */
+  padding: 0px 20px;
   cursor: pointer;
   font-size: 15px;
   line-height: 40px;
@@ -530,7 +530,7 @@ portfolio-work Start
 #portfolio-work .block .portfolio-menu ul li:hover:before {
   content: "\f0d7";
   position: absolute;
-  font-family: 'FontAwesom1e';
+  font-family: 'FontAwesome';
   bottom: -18px;
   font-size: 30px;
   width: 20px;
