@@ -1,1 +1,1 @@
-### Check it out! - wynspeare.github.io  
+### My Coding Portfolio - Check it out! - [wynspeare.github.io](wynspeare.github.io)
