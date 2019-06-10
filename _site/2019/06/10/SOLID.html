@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Examining the S & O of SOLID</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/img/w_logo.png"
+              width="80px" alt="Logo"> -->
+              <img src="/img/wsvg.svg" width="80px" alt="Logo">
+
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <!-- <li><a href="#">Service</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <!-- <section id="intro" style="border: 1px dotted #ddd;"> -->
+  <section id="intro" style="background-color: white">
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Examining the S & O of SOLID</h1>
+            <div class="post-info-wrapper">
+              <p class="italic">By <span class="bold">Caroline</span> on <span class="bold">June 10, 2019</span></p>
+            </div>
+            <hr />
+            <p><p>This post is about the first two principles of the SOLID acronym. So what is SOLID?  The five principles were first conceptualized by Robert C. Martin in 2000. Later on Michael Feathers defined these concepts into an easy to remember acronym - SOLID:
+<br />
+<br /></p>
+<h4 id="single-responsibility"><strong>S</strong>ingle Responsibility</h4>
+<h4 id="openclosed"><strong>O</strong>pen/Closed</h4>
+<h4 id="liskov-substitution"><strong>L</strong>iskov Substitution</h4>
+<h4 id="interface-segregation"><strong>I</strong>nterface Segregation</h4>
+<h4 id="dependency-inversion"><strong>D</strong>ependency Inversion<br /></h4>
+
+<hr />
+
+<h3 id="1--single-responsibility">1 | Single Responsibility</h3>
+<p>Robert C. Martin explains the principle as, “a class should have only one reason to change”. This means that objects should only have one purpose.  If an object is performing many different tasks, then at that point it is has more than one responsibility; it’s purpose is not coherent.  Object’s should be concerned with focusing on doing one job, and doing that job well.  The concept of <em>cohesion</em> is a major component of <strong>single responsibilty</strong>, it was coined by Tom Demarco, and is said to have influenced Martin in the creation of the SRP. When an object has a clear focused purpose it is considered <em>highly cohesive</em> and therefore becomes are easier to maintain.</p>
+
+<p>The other main aspect of single responsibility is the idea of <em>coupling</em>.  Essentially this can be thought of as how much does this object rely on other things to perform it’s task.  When an object is <em>loosely coupled</em> it can be easily switched out and modified as needed. Consider a laptop computer that has a built-in keyboard and trackpad - while they are thought of as individual components of a computer, they are entirely part of the laptop as a whole. Changing them, or getting them repaired is extremely challenging, you need the exact model.  They are very <em>tightly coupled</em>.</p>
+
+<p>On the other hand a desktop computer has a separate keyboard and a separate mouse. Upgrading and switching these out is extremely easy! You can use different components - the computer doesn’t mind what type of model, it just wants them to connect with a usb. This makes them <em>loosely coupled</em>.</p>
+
+<p>The SRP concept also builds upon the idea of <strong>encapsulation</strong>.  Thinking back to the desktop computer - a desktop only has one way to connect with an external keyboard - a usb port, and the computer only wants to know what keys have been pressed. The inner physical mechanics of the keyboard is not the concern of the computer. Encapsulation is the concept that an object’s attributes and behaviour are hidden and only the specific attributes or messages that are needed to make the system work as a whole are exposed. The keyboard just sends a message about what key has been pressed.<br /><br /></p>
+<h4 id="why-is-single-responsibility-important">Why is Single Responsibility important?</h4>
+<p>When software doesn’t follow single responsibilty, it can lead to the ever dangerous GOD object; an object that manages too many things. Code becomes highly coupled and has low coherance, therefore it’s very difficult to maintain. Changing one thing affects much more, and methods become inextricably linked.</p>
+
+<p>Here you can see an <code class="highlighter-rouge">Article</code> class.  The class is keeping track of 3 attributes - <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">author</code> and the <code class="highlighter-rouge">text</code> of the article. It has the ability to replace words and see if words exist in the article’s text. You can also choose to read the article, by calling the <code class="highlighter-rouge">print_text_to_console</code> method.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Article</span> <span class="p">{</span>
+ 
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+ 
+    <span class="n">replace_word_in_text</span><span class="p">(</span><span class="n">old_word</span><span class="p">,</span> <span class="n">new_word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">old_word</span><span class="p">,</span> <span class="n">new_word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+    <span class="p">}</span>
+ 
+    <span class="n">is_word_in_text</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+    <span class="p">}</span>
+
+    <span class="n">print_text_to_console</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>It seems like everything is directly related to managing an article. But let’s say I wanted to start creating books as well, and I also want to have the ability to read them.  Would the book class also have a <code class="highlighter-rouge">print_text_to_console</code> method? And what if I wanted to be able to print the text another way?  Now it becomes obvious that the <code class="highlighter-rouge">Article</code> class is managing too much, and instead the printing behaviour should be separated out into another class as follows:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Article</span> <span class="p">{</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+ 
+    <span class="n">replace_word_in_text</span><span class="p">(</span><span class="n">old_word</span><span class="p">,</span> <span class="n">new_word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">old_word</span><span class="p">,</span> <span class="n">new_word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+    <span class="p">}</span>
+ 
+    <span class="n">is_word_in_text</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Text_Printer</span> <span class="p">{</span>
+    <span class="n">print_text_to_console</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">print_text_to_another_medium</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">Send</span> <span class="n">text</span> <span class="n">to</span> <span class="n">another</span> <span class="n">location</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Much better!  Now I can print any text I want with the reusable <code class="highlighter-rouge">Text_Printer</code> class!</p>
+
+<hr />
+
+<h3 id="2--openclosed">2 | Open/Closed</h3>
+
+<p>This principle essential states that objects should be open for extension, but closed for modification.  What does that mean?  The goal is to stop code from being constantly modified which could potentially cause new bugs in an otherwise working application.  Systems should be able to adapt to change without breaking.  Basically you should always be able to add <em>new code</em> to an object, and should never have the need to change the design of <em>existing code</em>.<br /><br /></p>
+
+<h4 id="why-is-openclosed-important">Why is Open/Closed important?</h4>
+
+<p>It allows you to create code that is easy to maintain and resusable. This relates back to the coupling idea - the more something relies on how another is implemented, the higher the likelihood that you will need to alter one when changing the other. The best way to implement this principle is to use abstraction and interfaces.  Interfaces provide a way to duplicate and add onto code without deforming the original design, and thereby are closed for modifications.</p>
+
+<p>Consider a coffee machine - it’s prinicpal goal is to brew coffee.  Let’s say I wanted a basic coffee machine, it would have a few standard methods - <code class="highlighter-rouge">brewCoffee</code>, that might <code class="highlighter-rouge">heatWater</code> and notify the user <code class="highlighter-rouge">isCoffeeReady</code>. Great!  But then let’s say I wanted to also have a fancier premium machine. This one freshly grinds coffee beans before brewing the coffee, so we would need to modify the the <code class="highlighter-rouge">brewCoffee</code> method and add in a step to <code class="highlighter-rouge">grindBeans</code> before brewing. But oh no! the basic machine would now break - it has no idea what to do with <code class="highlighter-rouge">grindBeans</code>!</p>
+
+<p>Here is where a coffee machine interface would be ideal. An interface would essentially allow for the duplication of a standard coffee machine app into different implementations.  You could have a basic coffee machine version and a premium machine version where any additional functionality can be added - thereby making it open for extension!</p>
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px; background-color: black; margin-bottom: -1px">
+  <strong><a href="/blog">Back to blog</a></strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="/work">View My Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">How it works</a></li> -->
+            <!-- <li><a href="#">Terms</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
