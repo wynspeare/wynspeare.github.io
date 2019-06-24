@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>The LSP</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/img/w_logo.png"
+              width="80px" alt="Logo"> -->
+              <img src="/img/wsvg.svg" width="80px" alt="Logo">
+
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <!-- <li><a href="#">Service</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <!-- <section id="intro" style="border: 1px dotted #ddd;"> -->
+  <section id="intro" style="background-color: white">
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>The LSP</h1>
+            <div class="post-info-wrapper">
+              <p class="italic">By <span class="bold">Caroline</span> on <span class="bold">June 24, 2019</span></p>
+            </div>
+            <hr />
+            <p><h3 id="3--the-liskov-substitution-principle">3 | The Liskov Substitution Principle</h3>
+
+<p><strong>Barbara Liskov</strong> and <strong>Jeannette Wing</strong> described the principle in their 1994 paper, <em><a href="https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf">A Behavioral Notation of Subtyping</a></em> as follows:</p>
+
+<blockquote>
+  <h5 id="let-𝝓x-be-a-property-provable-about-objects-x-of-type-t-then-𝝓y-should-be-true-for-objects-y-of-type-s-where-s-is-a-subtype-of-t">Let 𝝓(x) be a property provable about objects x of type T. Then 𝝓(y) should be true for objects y of type S where S is a subtype of T.</h5>
+</blockquote>
+
+<p>So what does that even mean? Here’s a more simple definition:</p>
+
+<blockquote>
+  <h5 id="objects-should-be-replaceable-by-their-subtypes">Objects should be replaceable by their subtypes.</h5>
+</blockquote>
+
+<p>Essentially this is saying that a subtype (child) should be able to be used anywhere that a supertype (parent) is used; that the application will behave the same way.  Subtypes may have slightly different implementations from their parent or supertype, and this implementation difference is an example of polymorphism.  Subtypes do not need to be directly inherited from the superclass. Interestingly, as far as the principle is concerned, a subtype is anything that is interchangable and successfully interacts with a method the same way as the supertype!
+<br />
+<br /></p>
+
+<h4 id="why-is-this-important">Why is this important?</h4>
+<p>By adhering to the Liskov Substitution Principle, applications have the ability to expand more freely, with less intricate dependencies, and less unexpected consequences.  If the LSP is not followed, any future changes to applications will likely force previously written code to be modified, (thereby causing headaches and breaking the Open/Closed Principle!) When implementing the LSP it is important to consider any conditions that are placed on the subtype. If additional parameters are required when the subtype is called/instantiated, the subtype has <em>stricker pre-conditions</em>, which violates LSP.
+<br />
+<br /></p>
+
+<h4 id="how-to-fix-this">How to fix this?</h4>
+<p>The best way is to use abstraction and encapsulation as early as possible. In a Tic Tac Toe Application, consider a runner that can create different types of games - one-player (against a computer), or two-player game (two humans against each other).  The runner does not need to know which type of game is being created - as far as it’s concerned, they are the same - the game play is identical, each player takes turns playing their marker until the game is won. However the game itself should know what type it is; a solution could be to have a method to query the subtype’s own state.</p>
+
+<p>Let’s take a look at another example of how to implement LSP - see the code below. Let’s say I am growing my own virtual garden, and I have a few different types of vines.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">Garden</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Vine</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">requiredLight</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">Vine</span><span class="p">(</span><span class="kt">int</span> <span class="n">requiredLight</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">age</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">height</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">requiredLight</span> <span class="p">=</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Grow</span><span class="p">(</span><span class="kt">int</span> <span class="n">light</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">light</span> <span class="p">&gt;=</span> <span class="n">requiredLight</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">height</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+                <span class="n">age</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Bloom</span><span class="p">(</span><span class="kt">int</span> <span class="n">light</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">light</span> <span class="p">&gt;=</span> <span class="n">requiredLight</span> <span class="p">&amp;&amp;</span> <span class="n">age</span> <span class="p">&gt;=</span> <span class="m">5</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Your vine is flowering!"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Pothos</span><span class="p">:</span> <span class="n">Vine</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+        
+        <span class="k">public</span> <span class="nf">Pothos</span><span class="p">(</span><span class="kt">int</span> <span class="n">requiredLight</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">requiredLight</span> <span class="p">=</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Monstera</span><span class="p">:</span> <span class="n">Vine</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">Monstera</span><span class="p">(</span><span class="kt">int</span> <span class="n">requiredLight</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">requiredLight</span> <span class="p">=</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here I have a parent class - <code class="highlighter-rouge">Vine</code> and two child classes <code class="highlighter-rouge">Pothos</code> and <code class="highlighter-rouge">Monstera</code> that inherit directly from <code class="highlighter-rouge">Vine</code>.  The parent class has two methods <code class="highlighter-rouge">Grow</code> and <code class="highlighter-rouge">Bloom</code>.  You would think that all vines have these capabilities and therefore it would make complete sense to provide all vines with these behaviors.  But actually it turns out that <a href="https://theoutline.com/post/5292/everyone-s-favorite-houseplant-only-wants-to-die?zd=1&amp;zi=qu5g4et4">Pothos plants do not have the capability to flower</a>, and in fact the last time a pothos plant bloomed naturally was in 1962!  The child class <code class="highlighter-rouge">Pothos</code> should no longer have the <code class="highlighter-rouge">Bloom</code> method. Here you can see that the Liskov Principle would be violated, the parent class has behaviors that the child does not! Let’s modify this to follow LSP:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">Garden</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">interface</span> <span class="nc">IVine</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">age</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="k">set</span><span class="p">;}</span>
+        <span class="kt">int</span> <span class="n">requiredLight</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="k">set</span><span class="p">;}</span>
+        <span class="kt">int</span> <span class="n">height</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="k">set</span><span class="p">;}</span>
+
+        <span class="k">void</span> <span class="nf">Grow</span><span class="p">(</span><span class="kt">int</span> <span class="n">light</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">Garden</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Pothos</span> <span class="p">:</span> <span class="n">IVine</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">requiredLight</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">Pothos</span><span class="p">(</span><span class="kt">int</span> <span class="n">requiredLight</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">requiredLight</span> <span class="p">=</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Grow</span><span class="p">(</span><span class="kt">int</span> <span class="n">light</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">light</span> <span class="p">&gt;=</span> <span class="n">requiredLight</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">height</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+                <span class="n">age</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">Garden</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Monstera</span> <span class="p">:</span> <span class="n">IVine</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">requiredLight</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">Monstera</span><span class="p">(</span><span class="kt">int</span> <span class="n">requiredLight</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">requiredLight</span> <span class="p">=</span> <span class="n">requiredLight</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Grow</span><span class="p">(</span><span class="kt">int</span> <span class="n">light</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">light</span> <span class="p">&gt;=</span> <span class="n">requiredLight</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">height</span> <span class="p">+=</span> <span class="m">5</span><span class="p">;</span>
+                <span class="n">age</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+                <span class="nf">Bloom</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">Bloom</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="p">&gt;=</span> <span class="m">5</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Your vine is flowering!"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Much better!  Here I am using an <strong>interface</strong>, it is an excellent way to provide custom behaviors to the subtypes, whilst adhering to the Liskov Principle.  I have created an interface <code class="highlighter-rouge">IVine</code>.  Within the interface I have defined variables that exist for all vines, along with the method <code class="highlighter-rouge">Grow</code>.  Note that in the interface the <code class="highlighter-rouge">Grow</code> method is only defined.  There are two implementations of the interface <code class="highlighter-rouge">IVine</code> - <code class="highlighter-rouge">Pothos</code> and <code class="highlighter-rouge">Monstera</code>. The <code class="highlighter-rouge">Pothos</code> has just one method - <code class="highlighter-rouge">Grow</code>, whereas the <code class="highlighter-rouge">Monstera</code> has two - <code class="highlighter-rouge">Grow</code> and the private method <code class="highlighter-rouge">Bloom</code>.  Whenever the Monstera <code class="highlighter-rouge">Grow</code> method is called, the plant has the potential to flower, as the <code class="highlighter-rouge">Bloom</code> method is called within <code class="highlighter-rouge">Grow</code>.  This means that wherever these plants are used in my virtual garden application, whether it’s the parent/supertype or either subtype implementation - <code class="highlighter-rouge">Pothos</code> or <code class="highlighter-rouge">Monstera</code>, the available methods remain the same, making them completely interchangeable.  This is an excellent example of polymorphism, as the subtypes have slightly different behaviors and my garden application now follows the Liskov Substitution Principle!</p>
+
+<hr />
+
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px; background-color: black; margin-bottom: -1px">
+  <strong><a href="/blog">Back to blog</a></strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="/work">View My Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">How it works</a></li> -->
+            <!-- <li><a href="#">Terms</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
