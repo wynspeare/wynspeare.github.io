@@ -96,13 +96,14 @@
             <hr />
             <p><h3 id="4--the-interface-segregation-principle">4 | The Interface Segregation Principle</h3>
 
-<p>The <strong>Interface Segregation Principle</strong> states the following:</p>
-
+<p>The <strong>Interface Segregation Principle</strong> states the following:
+<br />
+<br /></p>
 <blockquote>
   <h5 id="no-client-should-be-forced-to-depend-on-methods-it-does-not-use">No client should be forced to depend on methods it does not use.</h5>
 </blockquote>
 
-<p>This can be explained to mean the following - do not add new methods, with additional functionality to an existing interface if they are not going to be used. Alternatively create a new interface and allow objects to implement multiple interfaces as needed.  Let’s take a look at some code to understand this further:
+<p>This can be explained to mean the following - <em>do not add new methods, with additional functionality to an existing interface if they are not going to be used.</em> Alternatively create a new interface and allow objects to implement multiple interfaces as needed.  Let’s take a look at some code to understand this further:
 <br />
 <br /></p>
 
@@ -113,7 +114,7 @@
     <span class="kt">string</span> <span class="nf">checkColorInkLevels</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here we have an interface for a printer. It has 3 methods defined <code class="highlighter-rouge">print</code>, <code class="highlighter-rouge">checkBlackInkLevels</code> and <code class="highlighter-rouge">checkColorInkLevels</code>. But what if I have <code class="highlighter-rouge">BWLaserPrinter</code>, a laser printer that prints in grayscale and only has black ink? The method <code class="highlighter-rouge">checkColorInkLevels</code> would be completely redundant, yet the interface would have forced the <code class="highlighter-rouge">BWLaserPrinter</code> object to implement a method which it has no use of.  This would be in violation of the Interface Segregation Principle. Let’s fix this problem!
+<p>Here we have an interface for a printer, <code class="highlighter-rouge">IPrinter</code>. It has 3 methods defined -  <code class="highlighter-rouge">print</code>, <code class="highlighter-rouge">checkBlackInkLevels</code> and <code class="highlighter-rouge">checkColorInkLevels</code>. But what if I have <code class="highlighter-rouge">BWLaserPrinter</code>, a laser printer that prints in grayscale and only has black ink? The method <code class="highlighter-rouge">checkColorInkLevels</code> would be completely redundant, yet the interface would have forced the <code class="highlighter-rouge">BWLaserPrinter</code> object to implement a method which it has no use of.  This would be in violation of the Interface Segregation Principle. Let’s fix this problem!
 <br />
 <br /></p>
 

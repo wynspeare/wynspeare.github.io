@@ -105,26 +105,29 @@
 
 <h4 id="why-do-i-need-to-look-out-for-dependencies">Why do I need to look out for dependencies?</h4>
 
-<p>When two objects have a direct reliance on each other, they become highly coupled. If I wanted to alter how <strong>B</strong> behaves, any changes will likely affect <strong>A</strong> and create unintended consequences. This would make code very difficult to manage in the future.  Let’s go back to the pens - maybe I want to use a different color of ink in my pen (<strong>A</strong>). The color of new ink cartridge (<strong>B</strong>) would not match the exterior of my existing pen, so I would then need to change the cap color of my pen <strong>A</strong>, (or even worse the new ink cartridge might not even fit the pen!)
+<p>When two objects have a direct reliance on each other, they become highly coupled. If I wanted to alter how <strong>B</strong> behaves, any changes will likely affect <strong>A</strong> and create unintended consequences. This would make code very difficult to manage in the future.  Let’s go back to the pens - maybe I want to use a different color of ink in my pen (<strong>A</strong>). The color of new ink cartridge (<strong>B</strong>) would not match the exterior of my existing pen, so I would then need to change the cap color of my pen <strong>A</strong>, (or even worse the new ink cartridge might not even fit my pen!)
 <br />
 <br /></p>
 
 <h4 id="so-how-do-we-remove-dependencies">So how do we remove dependencies?</h4>
 
-<p>By following the <strong>Dependency Inversion Principle</strong> of course!  The DIP states:</p>
-
+<p>By following the <strong>Dependency Inversion Principle</strong> of course!  The DIP states:
+<br />
+<br /></p>
 <blockquote>
   <h5 id="high-level-modules-should-not-depend-on-low-level-modules-both-should-depend-on-abstractions">High level modules should not depend on low-level modules. Both should depend on abstractions.</h5>
   <h5 id="abstractions-should-depend-on-details-details-should-depend-on-abstractions">Abstractions should depend on details. Details should depend on abstractions.</h5>
 </blockquote>
 
-<p>This means that two objects that depend on each other should be separated by a third object; an abstraction (let’s call this <strong>C</strong>).  When an abstraction is properly introduced the high-level module (object <strong>A</strong>) depends on the abstraction, and the low-level module (object <strong>B</strong>) also depends on the <strong>same</strong> abstraction. Thereby <em>changing</em> the direction of the dependency and removing the direct reference between <strong>A</strong> and <strong>B</strong>.  It isn’t so much that the coupling between the two objects has been completely removed, moreover the coupling has shifted to a third intermediary component - the abstraction, <strong>C</strong>. To make any edits to object <strong>B</strong>, there is no longer any need to comb through <strong>A</strong>, you would only have to check and possible make alterations in one place - <strong>C</strong>.
+<p>This means that two objects that depend on each other should be separated by a third object; an abstraction (let’s call this <strong>C</strong>).  When an abstraction is properly introduced the high-level module (object <strong>A</strong>) depends on the abstraction, and the low-level module (object <strong>B</strong>) also depends on the <strong>same</strong> abstraction. Thereby <em>changing</em> the direction of the dependency and removing the direct reference between <strong>A</strong> and <strong>B</strong>.  It isn’t so much that the coupling between the two objects has been completely removed, moreover the coupling has shifted to a third intermediary component - the abstraction, <strong>C</strong>. To make any edits to object <strong>B</strong>, there is no longer any need to comb through <strong>A</strong>, you would only have to check and make any possible alterations in one place - <strong>C</strong>.
 <br />
 <br /></p>
 
 <h4 id="how-do-i-implement-abstractions">How do I implement abstractions?</h4>
 
-<p>Interfaces are commonly used to follow the Dependency Inversion Principle.  They allow for objects to be defined, yet not fully implemented - providing a <em>broad outline</em> for what each object, <strong>A</strong> and <strong>B</strong> expects. Using them between dependent objects allows for slightly different implementations of how each object will behave. Let’s take a look at some code!</p>
+<p>Interfaces are commonly used to follow the Dependency Inversion Principle.  They allow for objects to be defined, yet not fully implemented - providing a <em>broad outline</em> for what each object, <strong>A</strong> and <strong>B</strong> expects. Using them between dependent objects allows for slightly different implementations of how each object will behave. Let’s take a look at some code!
+<br />
+<br /></p>
 
 <figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Post</span>
 <span class="p">{</span>
@@ -194,14 +197,16 @@
 
 <h4 id="what-is-the-difference-between-dependency-inversion-and-dependency-injection">What is the difference between Dependency Inversion and Dependency Injection?</h4>
 
-<p>Injection removes dependencies by supplying the dependent object <strong>B</strong> and passing it into <strong>A</strong>, rather than instantiating <strong>B</strong> within the higher-level, <strong>A</strong>. Conversely Dependency Inversion removes dependencies by separating <strong>A</strong> and <strong>B</strong> with an abstraction.  <a href="https://daedtech.com/about/">Erik Dietrich</a> in his blog post <a href="https://daedtech.com/dependency-injection-or-inversion/">“Dependency Injection or Inversion?”</a> came up with this great way to summarise the difference:</p>
+<p>Injection removes dependencies by supplying the dependent object <strong>B</strong> and passing it into <strong>A</strong>, rather than instantiating <strong>B</strong> within the higher-level, <strong>A</strong>. Conversely Dependency Inversion removes dependencies by separating <strong>A</strong> and <strong>B</strong> with an abstraction.  <a href="https://daedtech.com/about/">Erik Dietrich</a> in his blog post <a href="https://daedtech.com/dependency-injection-or-inversion/">“Dependency Injection or Inversion?”</a> came up with this great way to summarise the difference:
+<br />
+<br /></p>
 
 <blockquote>
   <h5 id="dependency-injection--gimme-it">Dependency Injection == “Gimme it”</h5>
   <h5 id="dependency-inversion--someone-take-care-of-this-for-me-somehow">Dependency Inversion == “Someone take care of this for me, somehow.”</h5>
 </blockquote>
 
-<p>With Injection, dependent objects are not instantiated, and instead are passed it down as a parameter. Dependency Inversion can be achieved by using Injection within the abstraction between objects <strong>A</strong> and <strong>B</strong>, which you can see in the code example above.</p>
+<p>With Injection, dependent objects are not instantiated, instead they are passed down as parameters. Dependency Inversion can be achieved by using Injection within the abstraction between objects <strong>A</strong> and <strong>B</strong>, which you can see in the code example above.</p>
 
 <p>Lastly it’s important to note - if you have successfully implemented the Open/Closed Principle and the Liskov Substitution Principle, you should have also followed the Dependency Inversion Principle, as all the SOLID Principles relate to each other!</p>
 </p>

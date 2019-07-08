@@ -9,10 +9,11 @@ author: Caroline
 
 
 The **Interface Segregation Principle** states the following:
-
+<br/>
+<br/>
 >##### No client should be forced to depend on methods it does not use.
 
-This can be explained to mean the following - do not add new methods, with additional functionality to an existing interface if they are not going to be used. Alternatively create a new interface and allow objects to implement multiple interfaces as needed.  Let's take a look at some code to understand this further:
+This can be explained to mean the following - *do not add new methods, with additional functionality to an existing interface if they are not going to be used.* Alternatively create a new interface and allow objects to implement multiple interfaces as needed.  Let's take a look at some code to understand this further:
 <br/>
 <br/>
 {% highlight csharp %}
@@ -26,7 +27,7 @@ interface IPrinter
 {% endhighlight %}
 
 
-Here we have an interface for a printer. It has 3 methods defined `print`, `checkBlackInkLevels` and `checkColorInkLevels`. But what if I have `BWLaserPrinter`, a laser printer that prints in grayscale and only has black ink? The method `checkColorInkLevels` would be completely redundant, yet the interface would have forced the `BWLaserPrinter` object to implement a method which it has no use of.  This would be in violation of the Interface Segregation Principle. Let's fix this problem!
+Here we have an interface for a printer, `IPrinter`. It has 3 methods defined -  `print`, `checkBlackInkLevels` and `checkColorInkLevels`. But what if I have `BWLaserPrinter`, a laser printer that prints in grayscale and only has black ink? The method `checkColorInkLevels` would be completely redundant, yet the interface would have forced the `BWLaserPrinter` object to implement a method which it has no use of.  This would be in violation of the Interface Segregation Principle. Let's fix this problem!
 <br/>
 <br/>
 
