@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Interface Segregation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/img/w_logo.png"
+              width="80px" alt="Logo"> -->
+              <img src="/img/wsvg.svg" width="80px" alt="Logo">
+
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <!-- <li><a href="#">Service</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <!-- <section id="intro" style="border: 1px dotted #ddd;"> -->
+  <section id="intro" style="background-color: white">
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Interface Segregation</h1>
+            <div class="post-info-wrapper">
+              <p class="italic">By <span class="bold">Caroline</span> on <span class="bold">July 7, 2019</span></p>
+            </div>
+            <hr />
+            <p><h3 id="4--the-interface-segregation-principle">4 | The Interface Segregation Principle</h3>
+
+<p>The <strong>Interface Segregation Principle</strong> states the following:</p>
+
+<blockquote>
+  <h5 id="no-client-should-be-forced-to-depend-on-methods-it-does-not-use">No client should be forced to depend on methods it does not use.</h5>
+</blockquote>
+
+<p>This can be explained to mean the following - do not add new methods, with additional functionality to an existing interface if they are not going to be used. Alternatively create a new interface and allow objects to implement multiple interfaces as needed.  Let’s take a look at some code to understand this further:
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">interface</span> <span class="nc">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nf">checkBlackInkLevels</span><span class="p">();</span>
+    <span class="kt">string</span> <span class="nf">checkColorInkLevels</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here we have an interface for a printer. It has 3 methods defined <code class="highlighter-rouge">print</code>, <code class="highlighter-rouge">checkBlackInkLevels</code> and <code class="highlighter-rouge">checkColorInkLevels</code>. But what if I have <code class="highlighter-rouge">BWLaserPrinter</code>, a laser printer that prints in grayscale and only has black ink? The method <code class="highlighter-rouge">checkColorInkLevels</code> would be completely redundant, yet the interface would have forced the <code class="highlighter-rouge">BWLaserPrinter</code> object to implement a method which it has no use of.  This would be in violation of the Interface Segregation Principle. Let’s fix this problem!
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">interface</span> <span class="nc">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nf">checkBlackInkLevels</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">interface</span> <span class="nc">IColorPrinter</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="nf">checkColorInkLevels</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The first step is to separate out the methods that do not apply to all implementations. Above I have created a new interface <code class="highlighter-rouge">IColorPrinter</code> which contains the <code class="highlighter-rouge">checkColorInkLevels</code> method signature. The original interface <code class="highlighter-rouge">IPrinter</code> now has two methods - <code class="highlighter-rouge">print</code> and <code class="highlighter-rouge">checkBlackInkLevels</code>, as all printers have these capabilities.  Now let’s implement these interfaces:
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">BWLaserPrinter</span> <span class="p">:</span> <span class="n">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Send to LASER printer</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="nf">checkBlackInkLevels</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Check BLACK ink</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Above the <code class="highlighter-rouge">BWLaserPrinter</code> object implements just one interface -  <code class="highlighter-rouge">IPrinter</code>. It is a black and white printer, so only needs to have the two original methods. 
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">InkJetColorPrinter</span> <span class="p">:</span> <span class="n">IPrinter</span><span class="p">,</span> <span class="n">IColorPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Send to INKJET printer</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="nf">checkBlackInkLevels</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Check BLACK ink</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="nf">checkColorInkLevels</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Check COLOR ink</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here is an example of using both interfaces. The <code class="highlighter-rouge">InkJetColorPrinter</code> object implements both <code class="highlighter-rouge">IPrinter</code> and <code class="highlighter-rouge">IColorPrinter</code>. It has the ability to check color <em>and</em> black ink levels. By creating a second interface, no methods are unused and the Interface Segregation Principle is followed!</p>
+
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px; background-color: black; margin-bottom: -1px">
+  <strong><a href="/blog">Back to blog</a></strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="/work">View My Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">How it works</a></li> -->
+            <!-- <li><a href="#">Terms</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>

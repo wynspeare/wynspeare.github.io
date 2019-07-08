@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Dependency Inversion</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/img/w_logo.png"
+              width="80px" alt="Logo"> -->
+              <img src="/img/wsvg.svg" width="80px" alt="Logo">
+
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <!-- <li><a href="#">Service</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <!-- <section id="intro" style="border: 1px dotted #ddd;"> -->
+  <section id="intro" style="background-color: white">
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Dependency Inversion</h1>
+            <div class="post-info-wrapper">
+              <p class="italic">By <span class="bold">Caroline</span> on <span class="bold">July 5, 2019</span></p>
+            </div>
+            <hr />
+            <p><h3 id="5--the-dependency-inversion-principle">5 | The Dependency Inversion Principle</h3>
+<p><br /></p>
+
+<h4 id="to-understand-this-principle-we-first-need-to-know----what-is-a-dependency">To understand this principle, we first need to know  - <em>what is a dependency?</em></h4>
+
+<p>Consider two objects <strong>A</strong> and <strong>B</strong>. Let’s say <strong>A</strong> is dependent on <strong>B</strong>. This means that in order for <strong>A</strong> to be successful and perform the job it is designed to do, <strong>A</strong> <em>needs</em> <strong>B</strong>. Let’s think about this with real objects - if <strong>A</strong> is a pen, <strong>B</strong> would be the ink cartridge; a pen with no ink is completely useless and would fail at its task!  In coding terms, if <strong>A</strong> is dependent on <strong>B</strong>, <strong>A</strong> <em>must</em> have a copy/instance of <strong>B</strong>, otherwise <strong>A</strong> cannot function.
+<br />
+<br /></p>
+
+<h4 id="why-do-i-need-to-look-out-for-dependencies">Why do I need to look out for dependencies?</h4>
+
+<p>When two objects have a direct reliance on each other, they become highly coupled. If I wanted to alter how <strong>B</strong> behaves, any changes will likely affect <strong>A</strong> and create unintended consequences. This would make code very difficult to manage in the future.  Let’s go back to the pens - maybe I want to use a different color of ink in my pen (<strong>A</strong>). The color of new ink cartridge (<strong>B</strong>) would not match the exterior of my existing pen, so I would then need to change the cap color of my pen <strong>A</strong>, (or even worse the new ink cartridge might not even fit the pen!)
+<br />
+<br /></p>
+
+<h4 id="so-how-do-we-remove-dependencies">So how do we remove dependencies?</h4>
+
+<p>By following the <strong>Dependency Inversion Principle</strong> of course!  The DIP states:</p>
+
+<blockquote>
+  <h5 id="high-level-modules-should-not-depend-on-low-level-modules-both-should-depend-on-abstractions">High level modules should not depend on low-level modules. Both should depend on abstractions.</h5>
+  <h5 id="abstractions-should-depend-on-details-details-should-depend-on-abstractions">Abstractions should depend on details. Details should depend on abstractions.</h5>
+</blockquote>
+
+<p>This means that two objects that depend on each other should be separated by a third object; an abstraction (let’s call this <strong>C</strong>).  When an abstraction is properly introduced the high-level module (object <strong>A</strong>) depends on the abstraction, and the low-level module (object <strong>B</strong>) also depends on the <strong>same</strong> abstraction. Thereby <em>changing</em> the direction of the dependency and removing the direct reference between <strong>A</strong> and <strong>B</strong>.  It isn’t so much that the coupling between the two objects has been completely removed, moreover the coupling has shifted to a third intermediary component - the abstraction, <strong>C</strong>. To make any edits to object <strong>B</strong>, there is no longer any need to comb through <strong>A</strong>, you would only have to check and possible make alterations in one place - <strong>C</strong>.
+<br />
+<br /></p>
+
+<h4 id="how-do-i-implement-abstractions">How do I implement abstractions?</h4>
+
+<p>Interfaces are commonly used to follow the Dependency Inversion Principle.  They allow for objects to be defined, yet not fully implemented - providing a <em>broad outline</em> for what each object, <strong>A</strong> and <strong>B</strong> expects. Using them between dependent objects allows for slightly different implementations of how each object will behave. Let’s take a look at some code!</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">LaserPrinter</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LaserPrinter</span><span class="p">();</span>
+
+    <span class="k">void</span> <span class="nf">PrintPost</span><span class="p">(</span><span class="kt">string</span> <span class="n">postMessage</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">postMessage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">LaserPrinter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Send to LASER printer</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here we have a <code class="highlighter-rouge">Post</code> object that can be printed via the <code class="highlighter-rouge">PrintPost</code> method. The <code class="highlighter-rouge">Post</code> class instantiates an instance of <code class="highlighter-rouge">LaserPrinter</code> - it is dependent on <code class="highlighter-rouge">LaserPrinter</code>. But what if we wanted to use a different type of printer!? Let’s see if we can fix this:
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">interface</span> <span class="nc">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">LaserPrinter</span> <span class="p">:</span> <span class="n">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Send to LASER printer</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">InkJetPrinter</span> <span class="p">:</span> <span class="n">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Send to INKJET printer</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Above we have created an interface <code class="highlighter-rouge">IPrinter</code> with the method <code class="highlighter-rouge">print</code> defined. Next we have two implementations of the interface: <code class="highlighter-rouge">LaserPrinter</code> and <code class="highlighter-rouge">InkJetPrinter</code>. As the interface just <em>defines</em> the method <code class="highlighter-rouge">print</code>, we have the ability to create custom behaviour for each specific type of printer when they are implemented!  Now let’s see our newly created interface used in the <code class="highlighter-rouge">Post</code> class:
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">IPrinter</span> <span class="n">printer</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">Post</span><span class="p">(</span><span class="n">IPrinter</span> <span class="n">injectedPrinter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printer</span> <span class="p">=</span> <span class="n">injectedPrinter</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">PrintPost</span><span class="p">(</span><span class="kt">string</span> <span class="n">postMessage</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">postMessage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here you can see the interface <code class="highlighter-rouge">IPrinter</code> is injected into the <code class="highlighter-rouge">Post</code> object when <code class="highlighter-rouge">Post</code> is instantiated! No more dependencies!
+<br />
+<br /></p>
+
+<h4 id="what-is-the-difference-between-dependency-inversion-and-dependency-injection">What is the difference between Dependency Inversion and Dependency Injection?</h4>
+
+<p>Injection removes dependencies by supplying the dependent object <strong>B</strong> and passing it into <strong>A</strong>, rather than instantiating <strong>B</strong> within the higher-level, <strong>A</strong>. Conversely Dependency Inversion removes dependencies by separating <strong>A</strong> and <strong>B</strong> with an abstraction.  <a href="https://daedtech.com/about/">Erik Dietrich</a> in his blog post <a href="https://daedtech.com/dependency-injection-or-inversion/">“Dependency Injection or Inversion?”</a> came up with this great way to summarise the difference:</p>
+
+<blockquote>
+  <h5 id="dependency-injection--gimme-it">Dependency Injection == “Gimme it”</h5>
+  <h5 id="dependency-inversion--someone-take-care-of-this-for-me-somehow">Dependency Inversion == “Someone take care of this for me, somehow.”</h5>
+</blockquote>
+
+<p>With Injection, dependent objects are not instantiated, and instead are passed it down as a parameter. Dependency Inversion can be achieved by using Injection within the abstraction between objects <strong>A</strong> and <strong>B</strong>, which you can see in the code example above.</p>
+
+<p>Lastly it’s important to note - if you have successfully implemented the Open/Closed Principle and the Liskov Substitution Principle, you should have also followed the Dependency Inversion Principle, as all the SOLID Principles relate to each other!</p>
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px; background-color: black; margin-bottom: -1px">
+  <strong><a href="/blog">Back to blog</a></strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="/work">View My Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">How it works</a></li> -->
+            <!-- <li><a href="#">Terms</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
