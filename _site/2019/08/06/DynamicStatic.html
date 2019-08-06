@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Dynamic/Static & Interpreted/Compiled</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <!-- <img src="/img/w_logo.png"
+              width="80px" alt="Logo"> -->
+              <img src="/img/wsvg.svg" width="80px" alt="Logo">
+
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <!-- <li><a href="#">Service</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <!-- <section id="intro" style="border: 1px dotted #ddd;"> -->
+  <section id="intro" style="background-color: white">
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Dynamic/Static & Interpreted/Compiled</h1>
+            <div class="post-info-wrapper">
+              <p class="italic">By <span class="bold">Caroline</span> on <span class="bold">August 6, 2019</span></p>
+            </div>
+            <hr />
+            <p><h3 id="what-is-a-type">What is a type?</h3>
+
+<p>Programming languages can be classified as dynamic or statically typed and interpreted or compiled. But first we need to fully understand <strong>what is a type?</strong></p>
+
+<p>A type describes the kind of data that is stored in memory, and only <strong>specific</strong> operations (mathematical, relational, logical etc) are allowed to be performed on each type. For example, integers allow various mathematical operations - they can be added, minused, multiplied, divided and so on. Whereas minusing or dividing a string of text is not possible, resulting in a <strong>type error</strong>.</p>
+
+<p>Incidentally multiplying or adding strings <em>is</em> permitted in some languages. In the code block below you can see that python allows strings to be concatenated (added together) using the <code class="highlighter-rouge">+</code> and <code class="highlighter-rouge">*</code> operators, yet a <strong>TypeError</strong> occurs when trying to add a string to an integer.
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"red"</span> <span class="o">+</span> <span class="s">"yellow"</span><span class="p">)</span>
+<span class="n">redyellow</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"red"</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">redredred</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"red"</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s">"int"</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"red"</span> <span class="o">+</span> <span class="s">"3"</span><span class="p">)</span>
+<span class="n">red3</span></code></pre></figure>
+
+<p><br /></p>
+<h4 id="common-data-types-available-in-most-languages">Common data types available in most languages:</h4>
+<p>• <strong>Boolean</strong> - True or False
+<br />
+• <strong>Char</strong> - A single character, letter, digit or symbol
+<br />
+• <strong>Date</strong> - 08/06/2019
+<br />
+• <strong>Integer</strong> - A whole number, usually each language has a maximum and minimum value
+<br />
+• <strong>Float</strong> - A decimal point number
+<br />
+• <strong>String</strong> - Any sequence of letters/numbers (or emojis!) that are contained within quotes
+<br />
+• <strong>Void</strong> - No data
+<br />
+• <strong>List</strong> or Array - An enumerable sequence of values or fixed or variable length
+<br />
+• <strong>Associative Array</strong> or Dictionary - consisting of key, value pairs
+<br /></p>
+
+<hr />
+<p><br /></p>
+<h3 id="what-is-a-statically-typed-language">What is a <strong>Statically Typed</strong> Language?</h3>
+
+<p>Statically typed languages require that the type of a variable <em>must be known</em> at compile time. This means that everything must be specifically assigned to a designated type. C# and Java are commonly used statically typed languages.  Planning what type each variable is going to be and always considering the input/output for all methods is certainly restrictive and time consuming, yet it has significant benefits!
+<br />
+<br /></p>
+<h4 id="why-is-static-typing-useful">Why is static typing useful?</h4>
+<p>• <strong>Easy to Understand</strong> - Code is easier to understand as you can follow how it was <em>designed</em> to work.
+<br />
+• <strong>Maintainable</strong> - By having code that is easy to comprehend, the maintainability greatly increases. Future developers working on legacy code, have to spend less time trying to discern what was the intended usage.
+<br />
+• <strong>IDE Support</strong> - Many IDEs provide enhanced features e.g. hints when code is going to create an error. This allows developers to work more efficiently.
+<br />
+• <strong>Less unexpected errors</strong> - Certain errors are greatly reduced - for example when sanitizing user input, numerical strings can never be mistaken for integers: <code class="highlighter-rouge">"10"</code> versus <code class="highlighter-rouge">10</code>, lessening any potential errors when code is being executed.</p>
+
+<hr />
+<p><br /></p>
+<h3 id="what-is-a-dynamically-typed-language">What is a <strong>Dynamically Typed</strong> Language?</h3>
+
+<p>A dynamic language allows variables to be discovered and <em>type checked</em> at run-time. Type checking is the process to ensure that the program is <em>“type safe”</em>. It verifies and enforces the constraints of each type by making sure that list of associated operations that can be performed on the data is possible - (mathematical/relational operations or built-in methods).  The most common dynamic languages are Javascript, Python and Ruby.
+<br />
+<br /></p>
+<h4 id="benefits-of-dynamic-typing">Benefits of dynamic typing</h4>
+
+<p>• <strong>Clean</strong> - Often dynamically typed languages are considered simpler as they are less verbose and have less “clutter”.
+<br />
+• <strong>Faster to run</strong> - Having no compile time means that code can be ran much more quickly, which is great when practicing TDD.
+<br />
+• <strong>Legibility</strong> -  The elimination of needing to explicitly state each type means the code looks closer to pseudo-code and is easier for humans to read.
+<br />
+• <strong>More useful errors</strong> - The less stringent nature of dynamic typing generally means there are fewer errors concerned with syntax, and instead more errors are generated purely from logic.
+<br />
+• <strong>Easy to learn</strong> - These reasons mean that dynamically typed languages are often the first languages that new developers learn, particularly in coding bootcamps.</p>
+
+<hr />
+<p><br /></p>
+
+<h3 id="type-inference">Type Inference</h3>
+
+<p>Certain languages have the ability to use type inference - where the type of a value is <strong>inferred</strong> by what is detected at compile time, meaning you do not have to explicitly state the type.  C#, while being a statically typed language, also allows some flexibility with type inference by using the <code class="highlighter-rouge">var</code> keyword. Check out the two examples below:</p>
+
+<p>Using specific assigned types -</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">myList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span></code></pre></figure>
+
+<p>Using the <code class="highlighter-rouge">var</code> keyword and type inference -</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">myList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span></code></pre></figure>
+
+<p>This allows code to be written more quickly with additional flexibility for polymorphism.</p>
+
+<hr />
+<p><br /></p>
+
+<h3 id="interpreted--compiled-languages">Interpreted &amp; Compiled Languages</h3>
+
+<p>Compiled languages require that code must first be converted from a <em>human-readable</em> format into machine code that a computer can natively run.  When code is compiled it is checked for any errors - this can prevent issues from arising when the code is eventually executed (although this doesn’t mean it will be free from logical errors!)  This step is where the types are checked (see above). In general compiled languages will <strong>run</strong> faster as all of the type-checking has already happened.</p>
+
+<p>Because compiled code is converted into machine code, it unfortunately has to be specifically created for the operating system it is designed for.  A program compiled for a Linux computer will not execute on Windows computer, therefore you would need to recompile the program on a Windows machine for it to run successfully.</p>
+
+<p>Conversely interpreted languages do not need to be compiled before they are ran.  Python and Javascript are two of the commonly used interpreted languages. Being interpreted means that as long as the language is installed on a machine, the machine can run the script, regardless of what operating system it is.  Behind the scenes, the human-readable code is transformed on-the-fly to something the computer can read. Generally this means that interpreted languages are considered to be slower and certainly much less efficient, as more steps need to be performed when code is executed.</p>
+
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px; background-color: black; margin-bottom: -1px">
+  <strong><a href="/blog">Back to blog</a></strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="/work">View My Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">How it works</a></li> -->
+            <!-- <li><a href="#">Terms</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
